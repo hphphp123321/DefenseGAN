@@ -13,6 +13,7 @@ from torchvision.models.inception import inception_v3
 from utils import to, get_mnist_ds, setup_run
 
 
+os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 # Module that wraps the inception network to return pooled features
 class WrapInception(nn.Module):
     def __init__(self, net):

@@ -107,7 +107,7 @@ def train_gan(args):
                     writer.add_scalar('FID', fid, idx)
                 if args['verbose']:
                     print(idx, 'fid', fid)
-            torch.save(generator.state_dict(), '{}.pth'.format(idx))
+            torch.save(generator.state_dict(), './trained_models/gan/{}.pth'.format(idx))
             if args['tensorboard']:
                 with torch.no_grad():
                     writer.add_image('Fixed',
